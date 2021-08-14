@@ -16,10 +16,16 @@ View latitude and longitude data in "map.osm" file.
 Then Convert latitude and longitude data to UTM coordinates in "https://www.earthpoint.us/Convert.aspx".
 And set TF conversion in launch.
 ```
-<node pkg="tf" type="static_transform_publisher" name="base_to_laser" args="690975 3119274 0 -3.1 0 0 map local_map 100"/>
+ Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='static_transform_publisher',
+            arguments=['690975', '3119274', '0', '0', '0', '0', 'map', 'local_map']
+        ),
 ```
 ## Test
 First,run planner_node and rviz.
 ```
 ros2 launch osm_plan planner_node_launch.py 
+ros2 launch osm_cartography viz_osm.launch.py
 ``` 
