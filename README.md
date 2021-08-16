@@ -1,5 +1,9 @@
 # osm-planner
-
+## init
+```
+pip install pyproj
+sudo apt install ros-foxy-geodesy
+```
 ## Parameter initialization
 ### Select Map
 Change map parameter and 'lon', 'lat' in lanuch file.
