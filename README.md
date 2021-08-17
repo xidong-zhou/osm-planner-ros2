@@ -1,4 +1,34 @@
 # osm-planner
+## First
+```
+cd /opt/ros/foxy/lib/python3.8/site-packages/geodesy
+sudo gedit wu_point.py
+```
+Delete UTM coordinate conversion section
+```
+class WuPoint:
+    """
+    :class:`WuPoint` represents a map way point with associated UTM_
+    information.
+
+    :param waypt: `geographic_msgs/WayPoint`_ message.
+    :param utm: Corresponding :class:`geodesy.utm.UTMPoint` object. If None
+                provided, the *utm* object will be created.
+ 
+    .. describe:: str(wu_point)
+ 
+       :returns: String representation of :class:`WuPoint` object.
+    """
+
+    def __init__(self, waypt, utm=None):
+        """Constructor.
+
+        Collects relevant information from the way point message, and
+        creates the corresponding  :class:`geodesy.utm.UTMPoint`.
+        """
+        self.way_pt = waypt
+        self.utm = utm
+```
 ## init
 ```
 pip install pyproj
