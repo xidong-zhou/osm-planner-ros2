@@ -7,7 +7,7 @@ Panels:
         - /Global Options1
         - /Status1
       Splitter Ratio: 0.5
-    Tree Height: 363
+    Tree Height: 617
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -47,11 +47,11 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        base_link:
-          Value: true
-        local_map:
+        base:
           Value: true
         map:
+          Value: true
+        world:
           Value: true
       Marker Scale: 1
       Name: TF
@@ -59,9 +59,9 @@ Visualization Manager:
       Show Axes: true
       Show Names: false
       Tree:
-        map:
-          local_map:
-            base_link:
+        world:
+          map:
+            base:
               {}
       Update Interval: 0
       Value: true
@@ -124,7 +124,7 @@ Visualization Manager:
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
-    Fixed Frame: local_map
+    Fixed Frame: map
     Frame Rate: 30
   Name: root
   Tools:
