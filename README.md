@@ -48,15 +48,11 @@ View latitude and longitude data in "map.osm" file.
 <bounds minlat="28.1825200" minlon="112.9419600" maxlat="28.1878000" maxlon="112.9489900"/>
 ```
 Then Convert latitude and longitude data to UTM coordinates in "https://www.earthpoint.us/Convert.aspx".
-And set TF conversion in launch.
-```
- Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='static_transform_publisher',
-            arguments=['690975', '3119274', '0', '0', '0', '0', 'map', 'local_map']
-        ),
-```
+###  Change frame_id
+{map_frame = "base"}(plan in this frame) in osm_parser.cpp.
+{self.map.header.frame_id = '/world'} in viz_osm.py.
+{map = "map"}(map_frame_id) in utm_convert.cpp.
+
 ## Test
 First,run planner_node and rviz.
 ```
