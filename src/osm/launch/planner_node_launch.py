@@ -58,15 +58,6 @@ def generate_launch_description():
             output='screen',
             parameters=[{'map_url': map_url}],
             ),
-
-
-        Node(
-            package='tf2_ros',
-            executable='static_transform_publisher',
-            name='static_transform_publisher',
-            arguments=['690975', '3119274', '0', '0', '0', '0', 'world', 'local_map']
-        ),
-       
        
        Node(
             package='rviz2',
