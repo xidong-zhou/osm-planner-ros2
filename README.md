@@ -50,7 +50,9 @@ View latitude and longitude data in "map.osm" file.
 Then Convert latitude and longitude data to UTM coordinates in "https://www.earthpoint.us/Convert.aspx".
 ###  Change frame_id
 {map_frame = "base"}(plan in this frame) in osm_parser.cpp.
+
 {self.map.header.frame_id = '/world'} in viz_osm.py.
+
 {map = "map"}(map_frame_id) in utm_convert.cpp.
 
 ## Test
