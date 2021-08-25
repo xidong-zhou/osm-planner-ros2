@@ -80,7 +80,7 @@ class VizNode(Node):
                 
         self.map = xml_map.get_osm(map_url, bounding_box.makeGlobal())
         self.map.header.stamp = self.get_clock().now().to_msg()
-        self.map.header.frame_id = '/map'
+        self.map.header.frame_id = '/world'
         self.get_markers(self.map)
 
     def get_markers(self, gmap):
