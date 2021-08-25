@@ -191,7 +191,6 @@ class VizNode(Node):
 
         :param color: disk RGBA value
         """
-        zone =49
         index = 0
         z = 0
         
@@ -208,10 +207,10 @@ class VizNode(Node):
             wp.utm = geodesy.utm.UTMPoint 
             lat = wp.way_pt.position.latitude
             lon = wp.way_pt.position.longitude
-            x,y = self.LatLonToXY(lat,lon,zone)            
+            x,y = self.LatLonToXY(lat,lon,int(lon / 6.0) + 31)            
             wp.utm.easting = x
             wp.utm.northing = y
-            wp.utm.zone = zone
+            wp.utm.zone = int(lon / 6.0) + 31
             wp.utm.band = 'R'
             
             
